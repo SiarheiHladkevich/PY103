@@ -15,12 +15,12 @@ class Tomato:  # Объявление класса
     def grow(self):  # Метод, переводящий на след. стадию созревания
         self._state += 1
 
-    def cur_state(self):
-        self.current = self._state
-        return self.current
-
-    def cur_name(self):
-        return self.states.get(self.current)
+    # def cur_state(self):
+    #     self.current = self._state
+    #     return self.current
+    #
+    # def cur_name(self):
+    #     return self.states.get(self.current)
 
     def is_ripe(self):  # Метод, проверяющий созревание
         if self._state == 6:
@@ -46,19 +46,19 @@ class TomatoBush:  # Объявление класса
         if count == self.amount:
             return True
 
-    def number_state(self):
-        self.number = 0
-        while self.number < 1:
-            for _ in self.tomatoes:
-                self.number = _.cur_state()
-        return self.number
-
-    def name_state(self):
-        self.name = ''
-        if self.name == '':
-            for _ in self.tomatoes:
-                self.name = _.cur_name()
-        return self.name
+    # def number_state(self):
+    #     self.number = 0
+    #     while self.number < 1:
+    #         for _ in self.tomatoes:
+    #             self.number = _.cur_state()
+    #     return self.number
+    #
+    # def name_state(self):
+    #     self.name = ''
+    #     if self.name == '':
+    #         for _ in self.tomatoes:
+    #             self.name = _.cur_name()
+    #     return self.name
 
     def dive_away_all(self):  # Метод для очистки списка
         if self.all_are_rip():
@@ -75,13 +75,13 @@ class Gardener:  # Объявление класса
         self._plant.grow_all()
 
     def harvest(self):  # Метод, проверяющий созревание урожая
-        self.foo = self._plant.number_state()
-        self.bar = self._plant.name_state()
+        # self.foo = self._plant.number_state()
+        # self.bar = self._plant.name_state()
         if self._plant.all_are_rip():
             print('The harvest is ripe')
         else:
-            print(f'The harvest isn\'t yet ripe. The process is in the '
-                  f'state {self.foo} - "{self.bar}"')
+            print(f'The harvest isn\'t yet ripe.')
+            # The process is in the state {self.foo} - "{self.bar}"')
 
     @staticmethod
     def knowledge_base():  # Статический метод. Справка по садоводству
